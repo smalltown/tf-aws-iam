@@ -3,6 +3,17 @@ data "aws_iam_policy_document" "read" {
     actions   = "${var.read_policy_actions}"
     resources = "${var.read_policy_resources}"
   }
+
+  # the permission to operate terraform remote state lock, the resource part need to be modified for fitting the real situation
+  #statement {
+  #  actions = [
+  #    "dynamodb:*"
+  #  ]
+  #
+  #  resources = [
+  #    "arn:aws:dynamodb:*:*:table/${var.account_alias}.tfstate"
+  #  ]
+  #}
 }
 
 resource "aws_iam_policy" "read" {
