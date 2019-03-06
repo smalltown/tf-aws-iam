@@ -4,7 +4,7 @@ data "aws_iam_policy_document" "read" {
     resources = "${var.read_policy_resources}"
   }
 
-  # the permission to operate terraform remote state lock, the resource part need to be modified for fitting the real situation
+  # permission to operate terraform remote state lock, the resource part need to be modified for fitting the real situation
   #statement {
   #  actions = [
   #    "dynamodb:*"
