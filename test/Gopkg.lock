@@ -80,6 +80,7 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/gruntwork-io/terratest/modules/collections",
     "github.com/gruntwork-io/terratest/modules/random",
     "github.com/gruntwork-io/terratest/modules/terraform",
     "github.com/stretchr/testify/assert",
