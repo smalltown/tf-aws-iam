@@ -1,7 +1,7 @@
 data "aws_iam_policy_document" "write" {
   statement {
-    actions   = "${var.write_policy_actions}"
-    resources = "${var.write_policy_resources}"
+    actions   = var.write_policy_actions
+    resources = var.write_policy_resources
   }
 
   # permission to operate terraform remote state lock, the resource part need to be modified for fitting the real situation
@@ -17,8 +17,8 @@ data "aws_iam_policy_document" "write" {
 }
 
 resource "aws_iam_policy" "write" {
-  name   =  "${var.write_account_name}"
-  policy = "${data.aws_iam_policy_document.write.json}"
+  name   = var.write_account_name
+  policy = data.aws_iam_policy_document.write.json
 }
 
 data "aws_iam_policy_document" "write_assume_role" {
@@ -39,18 +39,18 @@ data "aws_iam_policy_document" "write_assume_role" {
     condition {
       test     = "NumericLessThan"
       variable = "aws:MultiFactorAuthAge"
-      values   = ["${var.MFAge}"]
+      values   = [var.MFAge]
     }
   }
 }
 
 resource "aws_iam_role" "write" {
-  name               = "${var.write_account_name}"
+  name               = var.write_account_name
   path               = "/"
-  assume_role_policy = "${data.aws_iam_policy_document.write_assume_role.json}"
+  assume_role_policy = data.aws_iam_policy_document.write_assume_role.json
 }
 
 resource "aws_iam_role_policy_attachment" "write" {
-  role       = "${aws_iam_role.write.name}"
-  policy_arn = "${aws_iam_policy.write.arn}"
+  role       = aws_iam_role.write.name
+  policy_arn = aws_iam_policy.write.arn
 }

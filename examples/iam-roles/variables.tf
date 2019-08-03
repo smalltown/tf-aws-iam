@@ -12,49 +12,49 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 variable "aws_region" {
-  type    = "string"
+  type    = string
 }
 
 variable "central_account_id" {
-  type    = "string"
+  type    = string
 }
 
 variable "account_alias" {
-  type = "string"
+  type = string
 
 }
 
 variable "MFAge" {
-  type = "string"
+  type = string
 }
 
 variable "read_account_name" {
-  type    = "string"
+  type    = string
   default = "read"
 }
 
 variable "write_account_name" {
-  type    = "string"
+  type    = string
   default = "write"
 }
 
 variable "robot_account_name" {
-  type    = "string"
+  type    = string
   default = "robot"
 }
 
 variable "read_policy_actions" {
-  type    = "list"
+  type    = list(string)
 }
 
 variable "read_policy_resources" {
-  type    = "list"
+  type    = list(string)
 }
 
 variable "write_policy_actions" {
-  type    = "list"
+  type    = list(string)
 }
 
 variable "write_policy_resources" {
-  type    = "list"
+  type    = list(string)
 }

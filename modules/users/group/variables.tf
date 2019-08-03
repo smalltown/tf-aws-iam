@@ -1,7 +1,7 @@
 variable "group_name" {
-  type = "string"
+  type = string
 }
 
 variable "account_id_mapping" {
-  type = "map"
+  type = map(string)
 }

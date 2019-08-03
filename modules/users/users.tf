@@ -1,6 +1,6 @@
 resource "aws_iam_user" "human_accounts" {
-  count = "${length(var.human_accounts)}"
-  name  = "${var.human_accounts[count.index]}"
+  count = length(var.human_accounts)
+  name  = var.human_accounts[count.index]
 }
 
 data "aws_iam_policy_document" "human_accounts" {
@@ -123,16 +123,16 @@ data "aws_iam_policy_document" "human_accounts" {
 }
 
 resource "aws_iam_policy" "human_accounts" {
-  count = "${length(var.human_accounts)}"
+  count = length(var.human_accounts)
 
   name        = "IAMPermission"
   description = "policy for ${var.human_accounts[count.index]} basic iam permission"
-  policy      = "${data.aws_iam_policy_document.human_accounts.json}"
+  policy      = data.aws_iam_policy_document.human_accounts.json
 }
 
 resource "aws_iam_user_policy_attachment" "human_accounts" {
-  count = "${length(var.human_accounts)}"
+  count = length(var.human_accounts)
 
-  user       = "${var.human_accounts[count.index]}"
-  policy_arn = "${aws_iam_policy.human_accounts.*.arn[count.index]}"
+  user       = var.human_accounts[count.index]
+  policy_arn = aws_iam_policy.human_accounts.*.arn[count.index]
 }
