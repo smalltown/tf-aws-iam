@@ -10,7 +10,7 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:0198ff5d45c9767f5c38409b9aa25f58b139bcff4f8032d827e177095952e279"
+  digest = "1:27f9af54c9145d87d3d760727186b801d14b63baaa4cc7bd46e8ecd11a49a06a"
   name = "github.com/gruntwork-io/terratest"
   packages = [
     "modules/collections",
@@ -24,8 +24,8 @@
     "modules/terraform",
   ]
   pruneopts = "UT"
-  revision = "43eab4ae23e48cdf3bf192266aabc46d307e1aef"
-  version = "v0.14.0"
+  revision = "242a06798c7d3babe30466ecb3a2e6b35a8ca66b"
+  version = "v0.18.2"
 
 [[projects]]
   digest = "1:0028cb19b2e4c3112225cd871870f2d9cf49b9b4276531f03438a88e94be86fe"
@@ -36,9 +36,12 @@
   version = "v1.0.0"
 
 [[projects]]
-  digest = "1:972c2427413d41a1e06ca4897e8528e5a1622894050e2f527b38ddf0f343f759"
+  digest = "1:5da8ce674952566deae4dbc23d07c85caafc6cfa815b0b3e03e41979cedb8750"
   name = "github.com/stretchr/testify"
-  packages = ["assert"]
+  packages = [
+    "assert",
+    "require",
+  ]
   pruneopts = "UT"
   revision = "ffdc059bfe9ce6a4e144ba849dbedead332c6053"
   version = "v1.3.0"

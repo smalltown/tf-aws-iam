@@ -12,16 +12,16 @@
 # ---------------------------------------------------------------------------------------------------------------------
 
 variable "aws_region" {
-  type = "string"
+  type = string
 }
 
 variable "robot_account_name" {
-  type    = "string"
+  type    = string
   default = "robot"
 }
 
 variable "human_accounts" {
-  type = "list"
+  type = list(string)
 }
 
 variable "read_group_name" {
@@ -30,13 +30,13 @@ variable "read_group_name" {
 }
 
 variable "write_group_name" {
-  type    = "string"
+  type    = string
   default = "write"
 }
 variable "robot_group_name" {
-  type    = "string"
+  type    = string
   default = "robot"
 }
 variable "account_id_mapping" {
-  type = "map"
+  type = map(string)
 }

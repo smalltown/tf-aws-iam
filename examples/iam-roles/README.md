@@ -19,7 +19,7 @@ it should be free, but you are completely responsible for all AWS charges.
    `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` environment variables. If you're using the `~/.aws/config` file for profiles then export `AWS_SDK_LOAD_CONFIG` as "True".
 1. Set the AWS region you want to use as the environment variable `AWS_DEFAULT_REGION`.
 1. Install [Terraform](https://www.terraform.io/) and make sure it's on your `PATH`.
-1. Run `tterraform init -var-file=default.tfvars -var-file=read.tfvars -var-file=write.tfvars`.
+1. Run `terraform init -var-file=default.tfvars -var-file=read.tfvars -var-file=write.tfvars`.
 1. Run `terraform apply -var-file=default.tfvars -var-file=read.tfvars -var-file=write.tfvars`.
 1. When you're done, run `terraform destroy -var-file=default.tfvars -var-file=read.tfvars -var-file=write.tfvars`.
 
